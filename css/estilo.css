@@ -1,0 +1,154 @@
+:root {
+    --color-bg: #6C7A89;
+    --color-white: #FFFFFF;
+    --color-gray: #B3B3B3;
+    --color-green: #1DB954;
+    --color-red: #D62828;
+    --color-gold: #F0C808;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+header {
+    background-color: var(--color-red);
+    padding: 0.7rem;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--color-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+}
+
+.titulo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1rem;
+    color: white;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: white;
+}
+
+p,
+li {
+    margin: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+a {
+    color: var(--color-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .titulo {
+        padding-top: 80px;
+        font-size: 1.5rem;
+    }
+}

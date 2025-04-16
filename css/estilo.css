@@ -5,6 +5,7 @@
     --color-green: #1DB954;
     --color-red: #D62828;
     --color-gold: #F0C808;
+    --shadow-dark: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -28,6 +29,21 @@ header {
     z-index: 1000;
 }
 
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -43,48 +59,46 @@ nav ul li a {
     color: var(--color-green);
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+main {
     max-width: 1200px;
     margin: auto;
 }
 
-.logo {
-    font-size: 2em;
-    font-weight: bold;
-    color: white;
+.banner {
+    background: url(../img/banner.webp) no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    margin-top: 58px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    color: var(--color-gold);
+    text-align: center;
+    text-shadow: 3px 3px 8px var(--shadow-dark);
 }
 
 .titulo {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 400;
     margin: auto;
     padding-top: 100px;
     text-align: center;
-    color: white;
-}
-
-.titulo img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+    color: var(--color-white);
 }
 
 h2 {
     font-size: 2rem;
     margin: 1rem;
-    color: white;
+    color: var(--color-white);
 }
 
 h3 {
     font-size: 1.5rem;
     margin: 1rem;
-    color: white;
+    color: var(--color-white);
 }
 
 p,
@@ -102,16 +116,13 @@ a {
 
 footer {
     background-color: #111;
-    color: white;
+    color: var(--color-white);
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
 
-main {
-    max-width: 1200px;
-    margin: auto;
-}
+/* Responsivo */
 
 @media (max-width: 768px) {
     header .container {
@@ -123,6 +134,10 @@ main {
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
+    }
+
+    .banner {
+        margin-top: 90px;
     }
 
     .titulo {

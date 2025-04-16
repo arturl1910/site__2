@@ -68,7 +68,7 @@ main {
 }
 
 .banner {
-    background: url(../img/banner.webp) no-repeat center/cover;
+    background: url(../img/banner.jpg) no-repeat center/cover;
     height: 400px;
     display: flex;
     margin-top: 58px;

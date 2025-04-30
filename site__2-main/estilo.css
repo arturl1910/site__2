@@ -1,0 +1,257 @@
+:root {
+    --color-bg: #6C7A89;
+    --color-white: #FFFFFF;
+    --color-gray: #B3B3B3;
+    --color-green: #1DB954;
+    --color-red: #D62828;
+    --color-gold: #F0C808;
+    --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #6C7A89;
+    font-size: 18px;
+    padding-top: 100px;
+}
+
+header {
+    background-color: #D62828;
+    padding: 0.7rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #1DB954;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.banner {
+    background: url(../img/banner.webp) no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: #F0C808;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+    margin-top: 80px;
+}
+
+#sobre {
+    padding: 35px;
+    background-color: #D62828;
+}
+
+.Biografia-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.biografia-texto {
+    flex: 1;
+    padding: 20px;
+}
+
+.biografia-texto h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.biografia-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.biografia-texto a {
+    text-decoration: none;
+    color: #1DB954;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.fonte{
+   font-size: 1.2rem;
+}
+
+.hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    flex: 1;
+}
+
+.hex {
+    width: 140px;
+    height: 120px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+    overflow: hidden;
+    background-color: #FAEBD7; /* antiquewhite */
+    position: relative;
+}
+
+.hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 1rem;
+    color: #FFFFFF;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin: 1rem;
+    color: #FFFFFF;
+}
+
+p,
+li {
+    margin: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+a {
+    color: #1DB954;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer {
+    background-color: #111111; /* black */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    header .container,
+    .Biografia-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .banner {
+        margin-top: 120px;
+    }
+
+    .titulo {
+        font-size: 2rem;
+        padding-top: 80px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    p,
+    li {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p,
+    li {
+        font-size: 1rem;
+    }
+
+    .banner {
+        margin-top: 150px;
+    }
+}

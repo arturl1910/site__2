@@ -19,12 +19,11 @@
 body {
     background-color: #6C7A89;
     font-size: 18px;
-    padding-top: 100px;
 }
 
 header {
     background-color: #D62828;
-    padding: 0.7rem;
+    padding: 1% 0;
     width: 100%;
     position: fixed;
     top: 0;
@@ -40,6 +39,7 @@ header .container {
     flex-wrap: wrap;
     max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
 }
 
 .logo {
@@ -67,27 +67,25 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
-main {
-    max-width: 1200px;
-    margin: auto;
-}
+
 
 .banner {
-    background: url(../img/banner.webp) no-repeat center/cover;
-    height: 400px;
+    background: url(../img/result_banner.webp) no-repeat center/cover;
+    height: 40vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    font-size: 3em;
+    font-size: 1.5em;
     color: #F0C808;
     text-align: center;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
-    margin-top: 80px;
+    
 }
 
-#sobre {
+#biografia {
     padding: 35px;
-    background-color: #D62828;
+    background-color: 	#A9A9A9;
 }
 
 .Biografia-container {
@@ -253,5 +251,52 @@ footer {
 
     .banner {
         margin-top: 150px;
+    }
+}
+
+@media (min-width: 2168px) {
+    .banner {
+        margin-top: 7em;
+    }
+}
+@media (min-width: 1527.5px) and (max-width: 2168px) {
+    .banner {
+        margin-top: 2.5em;
+    }
+}
+@media (min-width: 952px) and (max-width: 1527.5px) {
+    .banner {
+        margin-top: 2.5em;
+        height: 30vh;
+    }
+    .banner::after {
+        height: 30%;
+    }
+}
+@media (min-width: 843px) and (max-width: 952px) {
+    .banner {
+        margin-top: 2.4em;
+        height: 20vh;
+    }
+    .banner::after {
+        height: 20%;
+    }
+}
+@media (min-width: 713px) and (max-width: 843px) {
+    .banner {
+        margin-top: 2.5em;
+        height: 20vh;
+    }
+    .banner::after {
+        height: 20%;
+    }
+}
+@media (min-width: 0px) and (max-width: 713px) {
+    .banner {
+        margin-top: 9em;
+        height: 15vh;
+    }
+    .banner::after {
+        height: 15%;
     }
 }

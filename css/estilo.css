@@ -17,15 +17,19 @@
 }
 
 body {
-    background-color: var(--color-bg);
+    background-color: #6C7A89;
+    font-size: 18px;
+    padding-top: 100px;
 }
 
 header {
-    background-color: var(--color-red);
+    background-color: #D62828;
     padding: 0.7rem;
     width: 100%;
-    top: 0;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
 }
 
@@ -39,9 +43,9 @@ header .container {
 }
 
 .logo {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 nav ul {
@@ -52,14 +56,15 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: var(--color-green);
+    color: #1DB954;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-size: 1.2rem;
 }
 
 main {
@@ -68,64 +73,129 @@ main {
 }
 
 .banner {
-    background: url(../img/banner.jpg) no-repeat center/cover;
+    background: url(../img/banner.webp) no-repeat center/cover;
     height: 400px;
     display: flex;
-    margin-top: 58px;
     align-items: center;
     justify-content: center;
-    font-size: 2.5em;
-    color: var(--color-gold);
+    font-size: 3em;
+    color: #F0C808;
     text-align: center;
-    text-shadow: 3px 3px 8px var(--shadow-dark);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+    margin-top: 80px;
+}
+
+#sobre {
+    padding: 35px;
+    background-color: #D62828;
+}
+
+.Biografia-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.biografia-texto {
+    flex: 1;
+    padding: 20px;
+}
+
+.biografia-texto h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.biografia-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.biografia-texto a {
+    text-decoration: none;
+    color: #1DB954;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.fonte{
+   font-size: 1.2rem;
+}
+
+.hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    flex: 1;
+}
+
+.hex {
+    width: 140px;
+    height: 120px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+    overflow: hidden;
+    background-color: #FAEBD7; /* antiquewhite */
+    position: relative;
+}
+
+.hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .titulo {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     margin: auto;
     padding-top: 100px;
     text-align: center;
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 1rem;
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 1rem;
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 p,
 li {
     margin: 0.5rem 1rem;
-    font-size: 1rem;
-    color: var(--color-white);
+    font-size: 1.2rem;
+    color: #FFFFFF;
 }
 
 a {
-    color: var(--color-green);
+    color: #1DB954;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer {
-    background-color: #111;
-    color: var(--color-white);
+    background-color: #111111; /* black */
+    color: #FFFFFF;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
 
-/* Responsivo */
-
 @media (max-width: 768px) {
-    header .container {
+    header .container,
+    .Biografia-container {
         flex-direction: column;
         text-align: center;
     }
@@ -137,33 +207,51 @@ footer {
     }
 
     .banner {
-        margin-top: 90px;
+        margin-top: 120px;
     }
 
     .titulo {
         font-size: 2rem;
+        padding-top: 80px;
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 1.25rem;
+        font-size: 1.6rem;
     }
-}
 
-@media (max-width: 480px) {
+    p,
+    li {
+        font-size: 1.1rem;
+    }
+
     .logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     nav ul li {
         margin: 5px 0;
     }
+}
 
-    .titulo {
-        padding-top: 80px;
-        font-size: 1.5rem;
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p,
+    li {
+        font-size: 1rem;
+    }
+
+    .banner {
+        margin-top: 150px;
     }
 }

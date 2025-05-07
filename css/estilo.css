@@ -21,6 +21,10 @@ body {
     font-size: 18px;
 }
 
+section{
+    scroll-margin-top: 90px;
+}
+
 header {
     background-color: #D62828;
     padding: 1% 0;
@@ -196,6 +200,9 @@ footer {
     .Biografia-container {
         flex-direction: column;
         text-align: center;
+        section{
+            scroll-margin-top: 180px;
+        }
     }
 
     nav ul {

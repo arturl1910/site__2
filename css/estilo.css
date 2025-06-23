@@ -5,9 +5,15 @@
     scroll-behavior: smooth;
 }
 
+h1, h2, h3 {
+  font-family: 'Anton', sans-serif;
+}
+
 body {
     background-color: #DDEBF0;
     font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+   
 }
 
 section {

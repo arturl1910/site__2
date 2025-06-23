@@ -325,6 +325,15 @@ footer {
     transform: scale(1.05);
 }
 
+#evolucao{
+    text-align: justify;
+}
+
+#contato{
+    text-align: center;
+    
+}
+
 @media (max-width: 768px) {
     header .container, .Biografia-container {
         flex-direction: column;

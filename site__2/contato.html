@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Dot</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logoctt">
+                <a href="index.html">logo</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#biografia">Biografia</a></li>
+                    <li><a href="index.html#discografia">Discografia</a></li>
+                    <li><a href="index.html#evolucao">Evolução lírica</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <section id="inicio" class="bannercontato">
+            <h1>Entre Em Conato Conosco</h1>
+        </section>
+
+        <main>
+            <section id="contato"> 
+                <div class="container">
+                    <h1 class="centraliza">Contato</h1>
+                    <form class="formulario-contato" action="https://formsubmit.co/arturmiguel9890@gmail.com" method="post">
+                        <div class="grupo-form">
+                          <label for="nome">Nome completo:</label>
+                          <input type="text" id="nome" name="nome" required>
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label for="email">E-mail:</label>
+                          <input type="email" id="email" name="email" required>
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label for="idade">Idade:</label>
+                          <input type="number" id="idade" name="idade" min="10" max="120">
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label for="data">Data da consulta:</label>
+                          <input type="date" id="data" name="data">
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label for="area">Qual Seu album favorito?</label>
+                          <select id="area" name="area">
+                            <option value="SC.80">Section.80</option>
+                            <option value="TPAB">To Pimp a Butterfly</option>
+                            <option value="DAMN!">DAMN!</option>
+                            <option value="MR">MR.Morale</option>
+                            <option value="MC">Maad city</option>
+                            <option value="GNX">GNX.</option>
+                         </select>
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label>O quanto você gosta de música:</label>
+                          <input type="range" min="0" max="100" name="interesse">
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label>Gênero:</label>
+                          <input type="radio" name="genero" value="feminino"> Feminino
+                          <input type="radio" name="genero" value="masculino"> Masculino
+                          <input type="radio" name="genero" value="outro"> Outro
+                        </div>
+                  
+                        <div class="grupo-form">
+                          <label>quais estilos de musica você gosta</label>
+                          <input type="checkbox" name="uso[]" value="Samba"> Samba
+                          <input type="checkbox" name="uso[]" value="HP"> HipHop
+                          <input type="checkbox" name="uso[]" value="STNJ"> Sertanejo
+                          <input type="checkbox" name="uso[]" value="MPB"> MPB
+                          <input type="checkbox" name="uso[]" value="Rock"> Rock
+                          <input type="checkbox" name="uso[]" value="pop"> POP
+
+
+                        </div>
+                  
+                        <div class="grupo-form">
+                            <label for="mensagem">Qual seu artista favorito?</label>
+                            <textarea id="mensagem" name="mensagem" rows="2"></textarea>
+                          </div>
+                  
+                        <div class="grupo-form">
+                          <label for="mensagem">Sugestao de próximo site</label>
+                          <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+                        </div>
+                  
+                        <div class="grupo-form centraliza">
+                          <button type="submit" class="btn">Enviar</button>
+                          <input type="hidden" name="_captcha" value="false"> 
+                          <input type="hidden" name="_next" value="https://cintiapinho.github.io/meuprimeirosite_1C_TurmaB_2025/enviadosucesso.html">       
+                                     
+                        </div>
+                      </form>
+                    </div>
+    
+                   
+                </div>
+            </section>
+    
+
+
+
+
+    <footer>
+        <p>2025 - Criado por Artur Miguel - Todos os Direitos Reservados</p>
+    </footer>
+   
+</body>
+
+</html>

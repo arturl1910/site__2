@@ -377,7 +377,7 @@ footer {
   .grupo-form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 1.2em;
   }
   
@@ -393,12 +393,12 @@ footer {
   
   .grupo-form input[type="checkbox"],
   .grupo-form input[type="radio"] {
-    margin-right: 8px;
+    margin-right: 10px;
     margin-top: 0;
   }
   
   .grupo-form label {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     font-weight: bold;
   }
 

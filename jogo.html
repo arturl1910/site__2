@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Dot - Jogo do Kendrick</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo do jogo */
+        .game-area {
+            width: 400px;
+            height: 400px;
+            margin: 40px auto;
+            background: #222;
+            border: 2px solid #fff;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .player {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-image: url('img/img_albuns/pixel jogo.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        .target {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-image: url('img/img_albuns/quarto album (1).jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 0 8px gold;
+        }
+
+        #score {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        h1.game-title {
+            color: #f4f4f4;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        p.game-instructions {
+            text-align: center;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header do site -->
+    <header>
+        <div class="container">
+            <div class="logoctt">
+                <a href="index.html">logo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo do jogo -->
+    <h1 class="game-title">🎮 Jogo do Kendrick 🎵</h1>
+    <p class="game-instructions">Use as setas do teclado para mover o Kendrick e coletar os álbuns!</p>
+
+    <div class="game-area">
+        <div class="player"></div>
+        <div class="target"></div>
+    </div>
+
+    <p id="score">Álbuns coletados: 0</p>
+
+    <script>
+        const player = document.querySelector('.player');
+        const target = document.querySelector('.target');
+        const scoreDisplay = document.getElementById('score');
+        const gameArea = document.querySelector('.game-area');
+        let score = 0;
+
+        let playerX = 10;
+        let playerY = 10;
+        const step = 20;
+
+        // Movimento do jogador
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') playerY -= step;
+            if (e.key === 'ArrowDown') playerY += step;
+            if (e.key === 'ArrowLeft') playerX -= step;
+            if (e.key === 'ArrowRight') playerX += step;
+
+            // Limitar à área do jogo
+            playerX = Math.max(0, Math.min(playerX, gameArea.clientWidth - player.clientWidth));
+            playerY = Math.max(0, Math.min(playerY, gameArea.clientHeight - player.clientHeight));
+
+            player.style.left = playerX + 'px';
+            player.style.top = playerY + 'px';
+
+            checkCollision();
+        });
+
+        // Checa colisão com o álbum
+        function checkCollision() {
+            const playerRect = player.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+
+            if (
+                playerRect.left < targetRect.right &&
+                playerRect.right > targetRect.left &&
+                playerRect.top < targetRect.bottom &&
+                playerRect.bottom > targetRect.top
+            ) {
+                score++;
+                scoreDisplay.textContent = 'Álbuns coletados: ' + score;
+                moveTarget();
+            }
+        }
+
+        // Reposiciona o álbum aleatoriamente
+        function moveTarget() {
+            const x = Math.floor(Math.random() * (gameArea.clientWidth - target.clientWidth));
+            const y = Math.floor(Math.random() * (gameArea.clientHeight - target.clientHeight));
+            target.style.left = x + 'px';
+            target.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>

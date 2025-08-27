@@ -2,142 +2,270 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K Dot - Jogo do Kendrick</title>
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk&display=swap" rel="stylesheet">
-    <style>
-        /* Estilo do jogo */
-        .game-area {
-            width: 400px;
-            height: 400px;
-            margin: 40px auto;
-            background: #222;
-            border: 2px solid #fff;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K Dot - Jogo do Kendrick</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk&display=swap" rel="stylesheet">
+  <style>
+    /* RESET E ESTILO BASE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Space Grotesk', sans-serif;
+    }
 
-        .player {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-image: url('img/img_albuns/pixel jogo.png');
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-        }
+    body {
+      background: #121212;
+      color: #fff;
+    }
 
-        .target {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            top: 200px;
-            left: 200px;
-            background-image: url('img/img_albuns/quarto album (1).jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            box-shadow: 0 0 8px gold;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        #score {
-            margin-top: 15px;
-            font-size: 18px;
-            text-align: center;
-        }
+    /* HEADER E MENU */
+    header {
+      background: #1e1e1e;
+      padding: 10px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
 
-        h1.game-title {
-            color: #f4f4f4;
-            text-align: center;
-            margin-top: 30px;
-        }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        p.game-instructions {
-            text-align: center;
-            color: #ddd;
-        }
-    </style>
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: gold;
+    }
+
+    /* GAME HEADER */
+    .game-header {
+      text-align: center;
+      margin-top: 100px; /* evita sobreposição do menu */
+      padding: 20px;
+    }
+
+    .game-logo img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    h1.game-title {
+      color: #f4f4f4;
+      font-size: 2em;
+      margin: 10px 0 5px 0;
+    }
+
+    p.game-instructions {
+      color: #ddd;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    /* ÁREA DO JOGO */
+    .game-area {
+      width: 90vw;
+      max-width: 400px;
+      height: 90vw;
+      max-height: 400px;
+      margin: 0 auto 20px auto;
+      background: #222;
+      border: 2px solid #fff;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .player {
+      width: 15%;
+      height: 15%;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-image: url('img/img_albuns/pixel jogo.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+
+    .target {
+      width: 15%;
+      height: 15%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url('img/img_albuns/quarto album (1).jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 0 8px gold;
+    }
+
+    /* SCORE */
+    #score {
+      margin-top: 10px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    /* CONTROLES */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .controls-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      background: #333;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #000;
+      cursor: pointer;
+    }
+
+    .btn:active {
+      background: #555;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Header do site -->
-    <header>
-        <div class="container">
-            <div class="logoctt">
-                <a href="index.html">logo</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Conteúdo do jogo -->
-    <h1 class="game-title">🎮 Jogo do Kendrick 🎵</h1>
-    <p class="game-instructions">Use as setas do teclado para mover o Kendrick e coletar os álbuns!</p>
-
-    <div class="game-area">
-        <div class="player"></div>
-        <div class="target"></div>
+  <!-- HEADER -->
+  <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#biografia">Biografia</a></li>
+          <li><a href="index.html#discografia">Discografia</a></li>
+          <li><a href="index.html#evolucao">Evolução lírica</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <p id="score">Álbuns coletados: 0</p>
+  <!-- JOGO -->
+  <div class="game-header">
+    <div class="game-logo">
+      <a href="index.html"><img src="img/logo.png" alt="Logo do Site"></a>
+    </div>
+    <h1 class="game-title">🎮 Jogo do Kendrick 🎵</h1>
+    <p class="game-instructions">Use as setas do teclado ou os botões abaixo no celular!</p>
+  </div>
 
-    <script>
-        const player = document.querySelector('.player');
-        const target = document.querySelector('.target');
-        const scoreDisplay = document.getElementById('score');
-        const gameArea = document.querySelector('.game-area');
-        let score = 0;
+  <div class="game-area">
+    <div class="player"></div>
+    <div class="target"></div>
+  </div>
 
-        let playerX = 10;
-        let playerY = 10;
-        const step = 20;
+  <p id="score">Álbuns coletados: 0</p>
 
-        // Movimento do jogador
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowUp') playerY -= step;
-            if (e.key === 'ArrowDown') playerY += step;
-            if (e.key === 'ArrowLeft') playerX -= step;
-            if (e.key === 'ArrowRight') playerX += step;
+  <div class="controls">
+    <button class="btn" data-dir="up">⬆</button>
+    <div class="controls-row">
+      <button class="btn" data-dir="left">⬅</button>
+      <button class="btn" data-dir="down">⬇</button>
+      <button class="btn" data-dir="right">➡</button>
+    </div>
+  </div>
 
-            // Limitar à área do jogo
-            playerX = Math.max(0, Math.min(playerX, gameArea.clientWidth - player.clientWidth));
-            playerY = Math.max(0, Math.min(playerY, gameArea.clientHeight - player.clientHeight));
+  <!-- SCRIPT -->
+  <script>
+    const player = document.querySelector('.player');
+    const target = document.querySelector('.target');
+    const scoreDisplay = document.getElementById('score');
+    const gameArea = document.querySelector('.game-area');
+    let score = 0;
 
-            player.style.left = playerX + 'px';
-            player.style.top = playerY + 'px';
+    let playerX = 10;
+    let playerY = 10;
+    const step = 20;
 
-            checkCollision();
-        });
+    function move(direction) {
+      if (direction === 'up') playerY -= step;
+      if (direction === 'down') playerY += step;
+      if (direction === 'left') playerX -= step;
+      if (direction === 'right') playerX += step;
 
-        // Checa colisão com o álbum
-        function checkCollision() {
-            const playerRect = player.getBoundingClientRect();
-            const targetRect = target.getBoundingClientRect();
+      playerX = Math.max(0, Math.min(playerX, gameArea.clientWidth - player.clientWidth));
+      playerY = Math.max(0, Math.min(playerY, gameArea.clientHeight - player.clientHeight));
 
-            if (
-                playerRect.left < targetRect.right &&
-                playerRect.right > targetRect.left &&
-                playerRect.top < targetRect.bottom &&
-                playerRect.bottom > targetRect.top
-            ) {
-                score++;
-                scoreDisplay.textContent = 'Álbuns coletados: ' + score;
-                moveTarget();
-            }
-        }
+      player.style.left = playerX + 'px';
+      player.style.top = playerY + 'px';
 
-        // Reposiciona o álbum aleatoriamente
-        function moveTarget() {
-            const x = Math.floor(Math.random() * (gameArea.clientWidth - target.clientWidth));
-            const y = Math.floor(Math.random() * (gameArea.clientHeight - target.clientHeight));
-            target.style.left = x + 'px';
-            target.style.top = y + 'px';
-        }
-    </script>
+      checkCollision();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') move('up');
+      if (e.key === 'ArrowDown') move('down');
+      if (e.key === 'ArrowLeft') move('left');
+      if (e.key === 'ArrowRight') move('right');
+    });
+
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        move(btn.dataset.dir);
+      });
+    });
+
+    function checkCollision() {
+      const playerRect = player.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+
+      if (
+        playerRect.left < targetRect.right &&
+        playerRect.right > targetRect.left &&
+        playerRect.top < targetRect.bottom &&
+        playerRect.bottom > targetRect.top
+      ) {
+        score++;
+        scoreDisplay.textContent = 'Álbuns coletados: ' + score;
+        moveTarget();
+      }
+    }
+
+    function moveTarget() {
+      const padding = 10;
+      const x = Math.floor(Math.random() * (gameArea.clientWidth - target.clientWidth - padding * 2)) + padding;
+      const y = Math.floor(Math.random() * (gameArea.clientHeight - target.clientHeight - padding * 2)) + padding;
+      target.style.left = x + 'px';
+      target.style.top = y + 'px';
+    }
+  </script>
 </body>
+
 </html>
